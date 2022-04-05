@@ -1,0 +1,13 @@
+I, [2022-04-05T21:58:34.437418 #58949]  INFO -- : Registered expected interaction GET /clients
+W, [2022-04-05T21:58:34.449888 #58949]  WARN -- : Verifying - actual interactions do not match expected interactions. 
+Missing requests:
+	GET /clients
+
+
+
+W, [2022-04-05T21:58:34.449925 #58949]  WARN -- : Missing requests:
+	GET /clients
+
+
+
+I, [2022-04-05T21:58:34.485284 #58949]  INFO -- : Cleared interactions
