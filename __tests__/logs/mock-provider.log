@@ -1,6 +1,6 @@
-I, [2022-04-06T13:57:25.661826 #38558]  INFO -- : Registered expected interaction GET /clients
-I, [2022-04-06T13:57:25.667581 #38558]  INFO -- : Received request GET /clients
-I, [2022-04-06T13:57:25.668339 #38558]  INFO -- : Found matching response for GET /clients
-I, [2022-04-06T13:57:25.673328 #38558]  INFO -- : Verifying - interactions matched
-I, [2022-04-06T13:57:25.676207 #38558]  INFO -- : Cleared interactions
-I, [2022-04-06T13:57:25.679679 #38558]  INFO -- : Writing pact for pact-provider to /Users/andyshortzaizi.com/Documents/pact-js/__tests__/pacts/pact-consumer-pact-provider.json
+I, [2022-04-06T13:59:10.980148 #39131]  INFO -- : Registered expected interaction GET /clients
+I, [2022-04-06T13:59:10.985933 #39131]  INFO -- : Received request GET /clients
+I, [2022-04-06T13:59:10.986683 #39131]  INFO -- : Found matching response for GET /clients
+I, [2022-04-06T13:59:10.991318 #39131]  INFO -- : Verifying - interactions matched
+I, [2022-04-06T13:59:10.994159 #39131]  INFO -- : Cleared interactions
+I, [2022-04-06T13:59:10.997550 #39131]  INFO -- : Writing pact for pact-provider to /Users/andyshortzaizi.com/Documents/pact-js/__tests__/pacts/pact-consumer-pact-provider.json
