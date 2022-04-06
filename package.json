@@ -6,8 +6,7 @@
   "scripts": {
     "consumer": "node src/consumerService.js",
     "provider": "node src/providerService.js",
-    "test:consumer": "jest __tests__/consumer/pact.consumer.spec.js",
-    "test:andy": "jest __tests__/consumer/andy.spec.js"
+    "test:consumer": "jest __tests__/consumer/pact.consumer.spec.js"
   },
   "repository": {
     "type": "git",
