@@ -1,13 +1,6 @@
-I, [2022-04-05T21:58:34.437418 #58949]  INFO -- : Registered expected interaction GET /clients
-W, [2022-04-05T21:58:34.449888 #58949]  WARN -- : Verifying - actual interactions do not match expected interactions. 
-Missing requests:
-	GET /clients
-
-
-
-W, [2022-04-05T21:58:34.449925 #58949]  WARN -- : Missing requests:
-	GET /clients
-
-
-
-I, [2022-04-05T21:58:34.485284 #58949]  INFO -- : Cleared interactions
+I, [2022-04-06T13:57:25.661826 #38558]  INFO -- : Registered expected interaction GET /clients
+I, [2022-04-06T13:57:25.667581 #38558]  INFO -- : Received request GET /clients
+I, [2022-04-06T13:57:25.668339 #38558]  INFO -- : Found matching response for GET /clients
+I, [2022-04-06T13:57:25.673328 #38558]  INFO -- : Verifying - interactions matched
+I, [2022-04-06T13:57:25.676207 #38558]  INFO -- : Cleared interactions
+I, [2022-04-06T13:57:25.679679 #38558]  INFO -- : Writing pact for pact-provider to /Users/andyshortzaizi.com/Documents/pact-js/__tests__/pacts/pact-consumer-pact-provider.json

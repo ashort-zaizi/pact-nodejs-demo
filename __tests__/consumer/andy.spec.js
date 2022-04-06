@@ -1,31 +1,33 @@
+// "use strict"
+
 const { Matchers } = require("@pact-foundation/pact")
 const Pact = require("@pact-foundation/pact").Pact
 const { getClients, postClient } = require("../../src/consumer")
-
 const path = require("path")
 
+
 const mockProvider = new Pact({
-    port:8081,
-    log: path.resolve(process.cwd(), "__tests__/logs", "mock-provider.log"), // log file location and name
-    dir: path.resolve(process.cwd(), "__tests__/pacts"), // location where pact contract will be saved
-    spec: 2,
-    logLevel: 'INFO',
-    pactfileWriteMode: "overwrite",
-    consumer: "pact-consumer",
-    provider: "pact-provider"
+  port: 8081,
+  log: path.resolve(process.cwd(), "__tests__/logs", "mockserver-integration.log"),
+  dir: path.resolve(process.cwd(), "__tests__/pacts"),
+  spec: 2,
+  logLevel: 'INFO',
+  pactfileWriteMode: "overwrite",
+  consumer: "pact-consumer",
+  provider: "pact-provider",
 })
 
-describe("Consumer Pact Tests", () => {
-    beforeAll(() => mockProvider.setup());  // Start the Mock Server and wait for it to be available
-    afterEach(() => mockProvider.verify()); // Verifies that all interactions specified
-    afterAll(() => mockProvider.finalize()); // Records the interactions between the Mock Server into the pact file and shuts it down
+describe("Pact tests", () => {
+    beforeAll(() => mockProvider.setup());
+    afterEach(() => mockProvider.verify());
+    afterAll(() => mockProvider.finalize());
 
     describe('retrieve clients', () => {
 
         test('clients exist', async () => {
 
             // Setup Pact interactions
-            EXPECTED_RESP_BODY = [{
+            const GET_EXPECTED_BODY = [{
                 "firstName": "Lisa",
                 "lastName": "Simpson",
                 "age": 8,
@@ -59,7 +61,7 @@ describe("Consumer Pact Tests", () => {
                     headers: {
                         "Content-Type": "application/json; charset=utf-8",
                     },
-                    body: EXPECTED_RESP_BODY,
+                    body: GET_EXPECTED_BODY,
                 }
             })
 
@@ -67,12 +69,9 @@ describe("Consumer Pact Tests", () => {
             const response = await getClients()
 
             expect(response.headers['content-type']).toBe("application/json; charset=utf-8")
-            expect(response.data).toEqual(EXPECTED_RESP_BODY)
+            expect(response.data).toEqual(GET_EXPECTED_BODY)
             expect(response.status).toEqual(200)
-
         })
     })
-
-
+    
 })
-
