@@ -1,6 +1,0 @@
-I, [2022-04-06T13:52:35.834752 #37043]  INFO -- : Registered expected interaction GET /clients
-I, [2022-04-06T13:52:35.841002 #37043]  INFO -- : Received request GET /clients
-I, [2022-04-06T13:52:35.841690 #37043]  INFO -- : Found matching response for GET /clients
-I, [2022-04-06T13:52:35.846753 #37043]  INFO -- : Verifying - interactions matched
-I, [2022-04-06T13:52:35.849535 #37043]  INFO -- : Cleared interactions
-I, [2022-04-06T13:52:35.852746 #37043]  INFO -- : Writing pact for pact-provider to /Users/andyshortzaizi.com/Documents/p/__tests__/pacts/pact-consumer-pact-provider.json

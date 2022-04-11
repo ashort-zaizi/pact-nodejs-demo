@@ -1,8 +1,8 @@
-const { Matchers } = require("@pact-foundation/pact")
+const { Matchers, Publisher } = require("@pact-foundation/pact")
 const Pact = require("@pact-foundation/pact").Pact
 const { getClients, postClient } = require("../../src/consumer")
-
 const path = require("path")
+
 
 const mockProvider = new Pact({
     port:8081,
@@ -13,17 +13,17 @@ const mockProvider = new Pact({
     pactfileWriteMode: "overwrite",
     consumer: "pact-consumer",
     provider: "pact-provider"
-})
+ })
 
-describe("Consumer Pact Tests", () => {
+ describe("Consumer Pact Tests", () => {
     beforeAll(() => mockProvider.setup());  // Start the Mock Server and wait for it to be available
     afterEach(() => mockProvider.verify()); // Verifies that all interactions specified
     afterAll(() => mockProvider.finalize()); // Records the interactions between the Mock Server into the pact file and shuts it down
 
     describe('retrieve clients', () => {
-
+ 
         test('clients exist', async () => {
-
+  
             // Setup Pact interactions
             EXPECTED_RESP_BODY = [{
                 "firstName": "Lisa",
@@ -43,7 +43,7 @@ describe("Consumer Pact Tests", () => {
                 "age": 39,
                 "id": 3
             }]
-
+   
             await mockProvider.addInteraction({
                 state: "i have a list of clients",
                 uponReceiving: "a request for all clients",
@@ -65,14 +65,12 @@ describe("Consumer Pact Tests", () => {
 
             // make request to the Pact mock server
             const response = await getClients()
-
+ 
             expect(response.headers['content-type']).toBe("application/json; charset=utf-8")
             expect(response.data).toEqual(EXPECTED_RESP_BODY)
             expect(response.status).toEqual(200)
-
+  
         })
     })
-
-
-})
+ })
 
