@@ -24,3 +24,5 @@ A simple Nodejs + Jest project configuring contract tests with PactJS
 - Publish the contracts:
 `npm run publish:contract`
 
+1. npm install
+2. npm install --save-dev @pact-foundation/pact

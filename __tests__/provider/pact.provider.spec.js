@@ -28,7 +28,7 @@ describe("Get Clients verification", () => {
 
             // pactBrokerToken: process.env.PACT_TOKEN,
             // consumerVersionTags: ["pact-consumer"],
-            // providerVersionTags: ["pact-provider"],
+            providerVersionTags: ["pact-provider"],
             providerVersion: "1.0.0"
         }
         return new Verifier(opts).verifyProvider().then(output => {
