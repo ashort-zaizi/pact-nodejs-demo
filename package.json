@@ -6,8 +6,8 @@
   "scripts": {
     "consumer": "node src/consumerService.js",
     "provider": "node src/providerService.js",
-    "test:consumer": "jest __tests__/consumer/pact.consumer.spec.js",
-    "test:provider": "jest __tests__/provider/pact.provider.spec.js",
+    "test:consumer": "jest __tests__/consumer/pact.consumer.spec.js --runInBand ",
+    "test:provider": "jest __tests__/provider/pact.provider.spec.js --runInBand ",
     "pact:publish": "node __tests__/publish/publish.pact.js"
   },
   "repository": {
