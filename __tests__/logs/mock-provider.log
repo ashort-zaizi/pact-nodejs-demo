@@ -1,16 +1,6 @@
-I, [2022-04-12T18:17:03.456537 #63484]  INFO -- : Registered expected interaction GET /clients
-I, [2022-04-12T18:17:03.463441 #63484]  INFO -- : Received request GET /clients
-I, [2022-04-12T18:17:03.464175 #63484]  INFO -- : Found matching response for GET /clients
-I, [2022-04-12T18:17:03.469472 #63484]  INFO -- : Verifying - interactions matched
-I, [2022-04-12T18:17:03.472334 #63484]  INFO -- : Cleared interactions
-I, [2022-04-12T18:17:03.476175 #63484]  INFO -- : Registered expected interaction GET /clients/1
-I, [2022-04-12T18:17:03.479550 #63484]  INFO -- : Received request GET /clients/1
-I, [2022-04-12T18:17:03.479722 #63484]  INFO -- : Found matching response for GET /clients/1
-I, [2022-04-12T18:17:03.482672 #63484]  INFO -- : Verifying - interactions matched
-I, [2022-04-12T18:17:03.485201 #63484]  INFO -- : Cleared interactions
-I, [2022-04-12T18:17:03.488077 #63484]  INFO -- : Registered expected interaction POST /clients
-I, [2022-04-12T18:17:03.491013 #63484]  INFO -- : Received request POST /clients
-I, [2022-04-12T18:17:03.491179 #63484]  INFO -- : Found matching response for POST /clients
-I, [2022-04-12T18:17:03.493434 #63484]  INFO -- : Verifying - interactions matched
-I, [2022-04-12T18:17:03.495430 #63484]  INFO -- : Cleared interactions
-I, [2022-04-12T18:17:03.497750 #63484]  INFO -- : Writing pact for pact-provider to /Users/andyshortzaizi.com/Documents/pact-js/__tests__/pacts/pact-consumer-pact-provider.json
+I, [2022-04-13T17:39:02.146815 #25762]  INFO -- : Registered expected interaction GET /clients
+I, [2022-04-13T17:39:02.154758 #25762]  INFO -- : Received request GET /clients
+I, [2022-04-13T17:39:02.155890 #25762]  INFO -- : Found matching response for GET /clients
+I, [2022-04-13T17:39:02.162762 #25762]  INFO -- : Verifying - interactions matched
+I, [2022-04-13T17:39:02.166421 #25762]  INFO -- : Cleared interactions
+I, [2022-04-13T17:39:02.170469 #25762]  INFO -- : Writing pact for pact-provider to /Users/andyshortzaizi.com/Documents/pact-js/__tests__/pacts/pact-consumer-pact-provider.json

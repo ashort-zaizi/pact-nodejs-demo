@@ -3,32 +3,44 @@ const { Verifier } = require("@pact-foundation/pact")
 const { server, importData } = require("../../src/provider")
 require('dotenv').config()
 
-const SERVER_URL = "http://localhost:8081"
+jest.setTimeout(30000);
 
-// Start real provider server
-server.listen(8081, () => {
-    importData()
-    console.log(`Provider listening on ${SERVER_URL}`)
-})
+describe("Clients Service Pact verification", () => {
 
-describe("Clients Service verification", () => {
+    const port = 8081
+    let opts = {
+        provider: "Clients Service",
+        logLevel: "DEBUG",
+        providerBaseUrl: `http://localhost:${port}`,
+        // pactUrls: [path.resolve(process.cwd(), "./__tests__/pacts/pact-consumer-pact-provider.json")],
+        pactBrokerUrl: process.env.PACT_BROKER_BASE_URL,
+        pactBrokerToken: process.env.PACT_BROKER_TOKEN,
+        consumerVersionTags: ["pact-consumer"],
+        providerVersionTags: ["pact-provider"],
+        publishVerificationResult: false,
+        providerVersion: "1.0.0"
+    }
+
+    // Start real provider server
+    beforeAll(async () => {
+        server.listen(port, () => {
+            importData()
+            console.log(`Provider listening on http://localhost:${port}`)
+        })
+    })
 
     it("validates the expectations of the clients service", () => {
-        let opts = {
-            provider: "Clients Service",
-            logLevel: "DEBUG",
-            providerBaseUrl: SERVER_URL,
-            pactUrls: [path.resolve(process.cwd(), "./__tests__/pacts/pact-consumer-pact-provider.json")],
-            // pactBrokerUrl: process.env.PACT_BROKER_URL,
-            // pactBrokerToken: process.env.PACT_TOKEN,
-            consumerVersionTags: ["pact-consumer"],
-            providerVersionTags: ["pact-provider"],
-            publishVerificationResult: false,
-            providerVersion: "1.0.0"
-        }
+
         return new Verifier(opts).verifyProvider().then(output => {
             console.log("Pact Verification Complete!")
             console.log(output)
         })
     })
+
+    afterAll(async ()=> {
+        server.close();
+    })
+    // it('should validate the expectations of Order Web', () => {
+    //     return new Verifier().verifyProvider(opts)
+    //   })
 })

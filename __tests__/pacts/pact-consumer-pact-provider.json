@@ -8,7 +8,7 @@
   "interactions": [
     {
       "description": "a request for all clients",
-      "providerState": "there are clients",
+      "providerState": "i have a list of clients",
       "request": {
         "method": "GET",
         "path": "/clients",
@@ -41,57 +41,6 @@
             "id": 3
           }
         ]
-      }
-    },
-    {
-      "description": "a request to get a single client",
-      "providerState": "a client with ID equal to 1 exists",
-      "request": {
-        "method": "GET",
-        "path": "/clients/1",
-        "headers": {
-          "Accept": "application/json, text/plain, */*"
-        }
-      },
-      "response": {
-        "status": 200,
-        "headers": {
-          "Content-Type": "application/json; charset=utf-8"
-        },
-        "body": {
-          "firstName": "Lisa",
-          "lastName": "Simpson",
-          "age": 8,
-          "id": 1
-        }
-      }
-    },
-    {
-      "description": "a request to create a new client with firstname, lastname and age",
-      "providerState": "client server is available",
-      "request": {
-        "method": "POST",
-        "path": "/clients",
-        "headers": {
-          "Content-Type": "application/json;charset=utf-8"
-        },
-        "body": {
-          "firstName": "Andy",
-          "lastName": "Test",
-          "age": 21
-        }
-      },
-      "response": {
-        "status": 200,
-        "headers": {
-          "Content-Type": "application/json; charset=utf-8"
-        },
-        "body": {
-          "firstName": "Andy",
-          "lastName": "Test",
-          "age": 21,
-          "id": 3
-        }
       }
     }
   ],
