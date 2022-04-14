@@ -1,21 +1,21 @@
-const pact = require('@pact-foundation/pact-node');
+const publisher = require('@pact-foundation/pact-node');
 const path = require("path")
 require('dotenv').config()
 
-const gitHash = require('child_process')
-    .execSync('git rev-parse --short HEAD')
-    .toString().trim();
+// const gitHash = require('child_process')
+//     .execSync('git rev-parse --short HEAD')
+//     .toString().trim();
 
 // Used for publishing Paxt contract to PactFlow
 const opts = {
     pactFilesOrDirs: [path.resolve(__dirname, '../pacts/')],
     pactBroker: process.env.PACT_BROKER_BASE_URL,
     pactBrokerToken: process.env.PACT_BROKER_TOKEN,
-    // consumerVersion: gitHash
-    consumerVersion: "1.0.0"
+    consumerVersion: "1.0.0",
+    providerVersion: "1.0.0",
 }
 
-pact
+publisher
     .publishPacts(opts)
     .then(() => {
         console.log("Pact published successfully")

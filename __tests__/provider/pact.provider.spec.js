@@ -9,10 +9,10 @@ describe("Clients Service Pact verification", () => {
 
     const port = 8081
     let opts = {
-        provider: "Clients Service",
-        logLevel: "DEBUG",
+        provider: "pact-provider",
+        logLevel: "INFO",
         providerBaseUrl: `http://localhost:${port}`,
-        // pactUrls: [path.resolve(process.cwd(), "./__tests__/pacts/pact-consumer-pact-provider.json")],
+        // pactUrls: [path.resolve(process.cwd(), "./__tests__/pacts/dev-dev.json")],
         pactBrokerUrl: process.env.PACT_BROKER_BASE_URL,
         pactBrokerToken: process.env.PACT_BROKER_TOKEN,
         consumerVersionTags: ["pact-consumer"],
@@ -40,7 +40,5 @@ describe("Clients Service Pact verification", () => {
     afterAll(async ()=> {
         server.close();
     })
-    // it('should validate the expectations of Order Web', () => {
-    //     return new Verifier().verifyProvider(opts)
-    //   })
+
 })

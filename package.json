@@ -8,7 +8,10 @@
     "provider": "node src/providerService.js",
     "test:consumer": "jest __tests__/consumer/pact.consumer.spec.js --runInBand ",
     "test:provider": "jest __tests__/provider/pact.provider.spec.js --runInBand ",
-    "pact:publish": "node __tests__/publish/publish.pact.js"
+    "pact:publish": "node __tests__/publish/publish.pact.js",
+
+    "test:consumerClient": "jest __tests__/consumer/ClientsConsumer.spec.js --runInBand ",
+    "test:providerCliet": "jest __tests__/provider/ClientsProvidercleae.spec.js --runInBand "
   },
   "repository": {
     "type": "git",
