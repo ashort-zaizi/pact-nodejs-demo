@@ -7,7 +7,15 @@ jest.setTimeout(30000);
 
 describe("Clients Service Pact verification", () => {
 
+    // Start real provider server
     const port = 8081
+    beforeAll(async () => {
+        server.listen(port, () => {
+            importData()
+            console.log(`Provider listening on http://localhost:${port}`)
+        })
+    })
+
     let opts = {
         provider: "client-service-provider",
         logLevel: "INFO",
@@ -18,14 +26,6 @@ describe("Clients Service Pact verification", () => {
         consumerVersion: "1.0.0",
         providerVersion: "1.0.0"
     }
-
-    // Start real provider server
-    beforeAll(async () => {
-        server.listen(port, () => {
-            importData()
-            console.log(`Provider listening on http://localhost:${port}`)
-        })
-    })
 
     it("validates the expectations of the clients service", () => {
 

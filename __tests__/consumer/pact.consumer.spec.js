@@ -1,5 +1,5 @@
-const { Matchers, Publisher } = require("@pact-foundation/pact")
 const Pact = require("@pact-foundation/pact").Pact
+const { Matchers } = require("@pact-foundation/pact")
 const { getClients, getClient, postClient } = require("../../src/consumer")
 const path = require("path")
 
@@ -56,7 +56,6 @@ const mockProvider = new Pact({
             })
 
             it('will return a list of clients', async() => {
-
                 // make request to the Pact mock server to get all clients
                 const response = await getClients()
                 expect(response.headers['content-type']).toBe("application/json; charset=utf-8")
@@ -106,7 +105,6 @@ const mockProvider = new Pact({
     })
 
 
-    // // context
     describe('given a request body containing details of a new client is configured', () => {
         describe('when a request is sent to create the new client', () => {
 
