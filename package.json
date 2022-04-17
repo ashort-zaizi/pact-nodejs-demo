@@ -6,8 +6,8 @@
   "scripts": {
     "consumer": "node src/consumerService.js",
     "provider": "node src/providerService.js",
-    "test:consumer": "jest __tests__/consumer/pact.consumer.spec.js --runInBand ",
-    "test:provider": "jest __tests__/provider/pact.provider.spec.js --runInBand ",
+    "test:consumer": "jest __tests__/consumer/pact.consumer.spec.js --runInBand",
+    "test:provider": "jest __tests__/provider/pact.provider.spec.js --runInBand --detectOpenHandles",
     "pact:publish": "node __tests__/publish/publish.pact.js",
 
     "test:consumerClient": "jest __tests__/consumer/ClientsConsumer.spec.js --runInBand ",

@@ -5,14 +5,16 @@ const path = require("path")
 
 // mock provider setup
 const mockProvider = new Pact({
-    port: 8081,
+    port: 8081,   // start the mock provider on this port number
     log: path.resolve(process.cwd(), "__tests__/logs", "mock-provider.log"), // log file location and name
     dir: path.resolve(process.cwd(), "__tests__/pacts"), // location where pact contract will be saved
-    spec: 2,
-    logLevel: 'INFO',
-    pactfileWriteMode: "overwrite",
-    consumer: "pact-consumer",
-    provider: "pact-provider"
+    spec: 2,  // Pact specification version
+    logLevel: 'INFO',   // sets the log level to 'INFO' 
+    pactfileWriteMode: "overwrite",  // property used to overwrite an existing pact file in the specified folder with the same filename
+    consumer: "client-service-consumer",  // name given to the consumer 
+    provider: "client-service-provider",  // name given to the provider
+    consumerVersion: "1.0.0",   // consumer version number
+    providerVersion: "1.0.0"    // provider version number
  })
 
  describe("Pact for Clients Service API", () => {
@@ -24,11 +26,13 @@ const mockProvider = new Pact({
     describe('given there are clients', () => {
         describe('when a request is made to GET all clients', () => {
 
+            // Array of expected clients
             GET_CLIENTS_EXPECTED_BODY = [
                 { "firstName": "Lisa", "lastName": "Simpson", "age": 8, "id": 1 }, 
                 { "firstName": "Wonder", "lastName": "Woman", "age": 30, "id": 2 },
                 { "firstName": "Homer", "lastName": "Simpson", "age": 39, "id": 3 }]
 
+            // 
             beforeEach(() => {
                 const interaction = {
                     state: "i have a list of clients",
@@ -103,7 +107,7 @@ const mockProvider = new Pact({
 
 
     // // context
-    describe('given a request body containing details of the new client is configured', () => {
+    describe('given a request body containing details of a new client is configured', () => {
         describe('when a request is sent to create the new client', () => {
 
             const NEW_CLIENT_BODY = { "firstName": "Andy", "lastName": "Test", "age": 21 }

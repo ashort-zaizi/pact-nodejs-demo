@@ -2,9 +2,6 @@ const publisher = require('@pact-foundation/pact-node');
 const path = require("path")
 require('dotenv').config()
 
-// const gitHash = require('child_process')
-//     .execSync('git rev-parse --short HEAD')
-//     .toString().trim();
 
 // Used for publishing Paxt contract to PactFlow
 const opts = {

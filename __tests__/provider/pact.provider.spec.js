@@ -9,15 +9,13 @@ describe("Clients Service Pact verification", () => {
 
     const port = 8081
     let opts = {
-        provider: "pact-provider",
+        provider: "client-service-provider",
         logLevel: "INFO",
         providerBaseUrl: `http://localhost:${port}`,
-        // pactUrls: [path.resolve(process.cwd(), "./__tests__/pacts/dev-dev.json")],
         pactBrokerUrl: process.env.PACT_BROKER_BASE_URL,
         pactBrokerToken: process.env.PACT_BROKER_TOKEN,
-        consumerVersionTags: ["pact-consumer"],
-        providerVersionTags: ["pact-provider"],
-        publishVerificationResult: false,
+        publishVerificationResult: true,
+        consumerVersion: "1.0.0",
         providerVersion: "1.0.0"
     }
 
@@ -35,10 +33,6 @@ describe("Clients Service Pact verification", () => {
             console.log("Pact Verification Complete!")
             console.log(output)
         })
-    })
-
-    afterAll(async ()=> {
-        server.close();
     })
 
 })

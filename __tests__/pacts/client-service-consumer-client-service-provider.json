@@ -1,9 +1,9 @@
 {
   "consumer": {
-    "name": "pact-consumer"
+    "name": "client-service-consumer"
   },
   "provider": {
-    "name": "pact-provider"
+    "name": "client-service-provider"
   },
   "interactions": [
     {
