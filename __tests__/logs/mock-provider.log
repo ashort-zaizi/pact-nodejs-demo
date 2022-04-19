@@ -1,16 +1,16 @@
-I, [2022-04-17T16:40:13.956548 #11433]  INFO -- : Registered expected interaction GET /clients
-I, [2022-04-17T16:40:13.964031 #11433]  INFO -- : Received request GET /clients
-I, [2022-04-17T16:40:13.964755 #11433]  INFO -- : Found matching response for GET /clients
-I, [2022-04-17T16:40:13.970871 #11433]  INFO -- : Verifying - interactions matched
-I, [2022-04-17T16:40:13.974018 #11433]  INFO -- : Cleared interactions
-I, [2022-04-17T16:40:13.978182 #11433]  INFO -- : Registered expected interaction GET /clients/1
-I, [2022-04-17T16:40:13.981433 #11433]  INFO -- : Received request GET /clients/1
-I, [2022-04-17T16:40:13.981605 #11433]  INFO -- : Found matching response for GET /clients/1
-I, [2022-04-17T16:40:13.984468 #11433]  INFO -- : Verifying - interactions matched
-I, [2022-04-17T16:40:13.986942 #11433]  INFO -- : Cleared interactions
-I, [2022-04-17T16:40:13.990001 #11433]  INFO -- : Registered expected interaction POST /clients
-I, [2022-04-17T16:40:13.993163 #11433]  INFO -- : Received request POST /clients
-I, [2022-04-17T16:40:13.993370 #11433]  INFO -- : Found matching response for POST /clients
-I, [2022-04-17T16:40:13.996145 #11433]  INFO -- : Verifying - interactions matched
-I, [2022-04-17T16:40:13.998609 #11433]  INFO -- : Cleared interactions
-I, [2022-04-17T16:40:14.001286 #11433]  INFO -- : Writing pact for client-service-provider to /Users/andyshortzaizi.com/Documents/pact-js/__tests__/pacts/client-service-consumer-client-service-provider.json
+I, [2022-04-19T21:31:54.419091 #20319]  INFO -- : Registered expected interaction GET /clients
+I, [2022-04-19T21:31:54.425671 #20319]  INFO -- : Received request GET /clients
+I, [2022-04-19T21:31:54.426376 #20319]  INFO -- : Found matching response for GET /clients
+I, [2022-04-19T21:31:54.431487 #20319]  INFO -- : Verifying - interactions matched
+I, [2022-04-19T21:31:54.434101 #20319]  INFO -- : Cleared interactions
+I, [2022-04-19T21:31:54.437875 #20319]  INFO -- : Registered expected interaction GET /clients/1
+I, [2022-04-19T21:31:54.441206 #20319]  INFO -- : Received request GET /clients/1
+I, [2022-04-19T21:31:54.441352 #20319]  INFO -- : Found matching response for GET /clients/1
+I, [2022-04-19T21:31:54.444659 #20319]  INFO -- : Verifying - interactions matched
+I, [2022-04-19T21:31:54.447150 #20319]  INFO -- : Cleared interactions
+I, [2022-04-19T21:31:54.449812 #20319]  INFO -- : Registered expected interaction POST /clients
+I, [2022-04-19T21:31:54.452706 #20319]  INFO -- : Received request POST /clients
+I, [2022-04-19T21:31:54.452945 #20319]  INFO -- : Found matching response for POST /clients
+I, [2022-04-19T21:31:54.455518 #20319]  INFO -- : Verifying - interactions matched
+I, [2022-04-19T21:31:54.458497 #20319]  INFO -- : Cleared interactions
+I, [2022-04-19T21:31:54.462373 #20319]  INFO -- : Writing pact for client-service-provider to /Users/andyshortzaizi.com/Documents/pact-js/__tests__/pacts/client-service-consumer-client-service-provider.json

@@ -30,9 +30,16 @@ const mockProvider = new Pact({
             // GET_CLIENTS_EXPECTED_BODY = [
             //     { "firstName": "Lisa", "lastName": "Simpson", "age": 8, "id": 1 }, 
             //     { "firstName": "Wonder", "lastName": "Woman", "age": 30, "id": 2 },
-            //     { "firstName": "Homer", "lastName": "Simpson", "age": 39, "id": 3 }]
+            // { "firstName": "Homer", "lastName": "Simpson", "age": 39, "id": 3 }]
 
-            // 
+            GET_CLIENTS_EXPECTED_BODY = { 
+                "firstName": Matchers.like("Lisa"), 
+                "lastName": Matchers.like("Simpson"), 
+                "age": Matchers.like(8), 
+                "id": Matchers.like(1) 
+            }
+
+            // Setup interactions
             beforeEach(() => {
                 const interaction = {
                     state: "i have a list of clients",
@@ -50,12 +57,7 @@ const mockProvider = new Pact({
                         "Content-Type": "application/json; charset=utf-8",
                       },
                     //   body: GET_CLIENTS_EXPECTED_BODY,
-                    body: Matchers.eachLike({
-                        "firstName": Matchers.like("Lisa"),
-                        "lastName": Matchers.like("Simpson"), 
-                        "age": Matchers.like(8), 
-                        "id": Matchers.like(1)
-                    }, { min: 2 }),
+                    body: Matchers.eachLike(GET_CLIENTS_EXPECTED_BODY, { min: 2 }),
                   },
                 }
                 return mockProvider.addInteraction(interaction)  
@@ -66,6 +68,7 @@ const mockProvider = new Pact({
                 const response = await getClients()
                 expect(response.headers['content-type']).toBe("application/json; charset=utf-8")
                 // expect(response.data).toEqual(GET_CLIENTS_EXPECTED_BODY)
+                expect(response.data.length).toEqual(2)
                 expect(response.status).toEqual(200)
             })
         })
@@ -75,7 +78,14 @@ const mockProvider = new Pact({
     describe('given client with ID equal to 1 exists', () => {
         describe('when a request is made to get client with ID equal to 1', () => {
 
-            const EXPECTED_CLIENT = { firstName: "Lisa", lastName: "Simpson", age: 8, "id": 1 }
+            // const EXPECTED_CLIENT = { firstName: "Lisa", lastName: "Simpson", age: 8, "id": 1 }
+
+            const EXPECTED_CLIENT = {
+                firstName: Matchers.like("Lisa"),
+                lastName: Matchers.like("Simpson"),
+                age: Matchers.like(8),
+                "id": 1 
+            }
 
             beforeEach(() => {
                 const interaction = {
@@ -104,47 +114,12 @@ const mockProvider = new Pact({
                 // make request to the Pact mock server to get a client with ID=1
                 const response = await getClient(1)
                 expect(response.headers['content-type']).toBe("application/json; charset=utf-8")
-                expect(response.data).toEqual(EXPECTED_CLIENT)
+                // expect(response.data).toEqual(EXPECTED_CLIENT)
+                expect(response.data.firstName).toBeTruthy()
+                expect(response.data.lastName).toBeTruthy()
+                expect(response.data.age).toBeTruthy()
+                expect(response.data.id).toBeTruthy()
                 expect(response.status).toEqual(200)
-            })
-        })
-    })
-    
-
-    describe('given client with ID equal to 99 does not exist', () => {
-        describe('when a request is made to get client with ID equal to 99', () => {
-  
-            const EXPECTED_CLIENT = { "message": "Client not found!" }
-  
-            beforeEach(() => {
-                const interaction = {
-                    state: 'a client with ID equal to 99 does not exists',
-                    uponReceiving: 'a request to get a client with ID equal to 99',
-                    withRequest: {
-                        method: 'GET',
-                        path: '/clients/99',
-                        headers: {
-                            Accept: "application/json, text/plain, */*",
-                        },
-                    },
-                    willRespondWith: {
-                        status: 404,
-                        headers: {
-                            "Content-Type": "application/json; charset=utf-8",
-                        },
-                        body: EXPECTED_CLIENT
-                    },
-                }
-                return mockProvider.addInteraction(interaction)  
-            })
-  
-            it('will not return client', async() => {
-  
-                // make request to the Pact mock server to get a client with ID=99
-                const response = await getClient(99)
-                expect(response.headers['content-type']).toBe("application/json; charset=utf-8")
-                expect(response.data).toEqual(EXPECTED_CLIENT)
-                expect(response.status).toEqual(404)
             })
         })
     })
