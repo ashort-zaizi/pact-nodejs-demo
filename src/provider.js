@@ -16,41 +16,41 @@ server.use((req, res, next) => {
   next()
 })
 
-const clientRepository = new Repository()
+const userRepository = new Repository()
 
-// Load client data into a repository object
+// Load user data into a repository object
 const importData = () => {
-  const data = require("./data/clientData.json")
+  const data = require("./data/userData.json")
   data.reduce((a, v) => {
     v.id = a + 1
-    clientRepository.add(v)
+    userRepository.add(v)
     return a + 1
   }, 0)
 }
 
-// Get all clients
-server.get("/clients", (req, res) => {
-  res.json(clientRepository.fetchAll())
+// Get all users
+server.get("/users", (req, res) => {
+  res.json(userRepository.fetchAll())
 })
 
-// Find client by ID
-server.get("/clients/:id", (req, res) => {
-  const response = clientRepository.getById(req.params.id)
+// Find user by ID
+server.get("/users/:id", (req, res) => {
+  const response = userRepository.getById(req.params.id)
   if (response) {
     res.end(JSON.stringify(response))
   } else {
     res.status(404)
-    res.send({message: 'Client not found!'})
+    res.send({message: 'User not found!'})
     res.end()
   }
 })
 
-// Add a new Client
-server.post("/clients", (req, res) => {
-  const client = req.body
+// Add a new User
+server.post("/users", (req, res) => {
+  const user = req.body
 
   // Basic validation for missing first name field
-  if (!client || !client.firstName) {
+  if (!user || !user.firstName) {
     res.status(400)
     res.send({message:'Missing first name!', body: req.body})
     res.end()
@@ -58,14 +58,14 @@ server.post("/clients", (req, res) => {
     return
   }
 
-  client.id = clientRepository.fetchAll().length
-  clientRepository.add(client)
+  user.id = userRepository.fetchAll().length
+  userRepository.add(user)
 
-  res.json(client)
+  res.json(user)
 })
 
 module.exports = {
   server,
   importData,
-  clientRepository,
+  userRepository,
 }

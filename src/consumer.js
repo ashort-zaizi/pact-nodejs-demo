@@ -3,9 +3,9 @@ const express = require("express")
 const server = express()
 const getApiEndpoint = "http://localhost:8081"
 
-const getClients = async () => {
+const getUsers = async () => {
   const res = await axios
-    .get(`${getApiEndpoint}/clients`)
+    .get(`${getApiEndpoint}/users`)
     .then((res) => {
       return res
     })
@@ -15,9 +15,9 @@ const getClients = async () => {
   return res
 }
 
-const getClient = async (id) => {
+const getUser = async (id) => {
       const res = await axios
-        .get(`${getApiEndpoint}/clients/${id}`)
+        .get(`${getApiEndpoint}/users/${id}`)
         .then((res) => {
           return res;
         })
@@ -27,9 +27,9 @@ const getClient = async (id) => {
     return res
 }
 
-const postClient = async (body) => {
+const postUser = async (body) => {
       const res = await axios
-      .post(`${getApiEndpoint}/clients`, body, {'Content-Type': 'application/json;charset=utf-8'})
+      .post(`${getApiEndpoint}/users`, body, {'Content-Type': 'application/json;charset=utf-8'})
       .then((res) => {
           return res
         })
@@ -42,7 +42,7 @@ const postClient = async (body) => {
 
 module.exports = {
   server,
-  getClients,
-  postClient,
-  getClient,
+  getUsers,
+  postUser,
+  getUser,
 };

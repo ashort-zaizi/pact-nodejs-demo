@@ -5,7 +5,7 @@ require('dotenv').config()
 
 jest.setTimeout(30000);
 
-describe("Clients Service Pact verification", () => {
+describe("Users Service Pact verification", () => {
 
     // Start real provider server
     const port = 8081
@@ -17,7 +17,7 @@ describe("Clients Service Pact verification", () => {
     })
 
     let opts = {
-        provider: "client-service-provider",
+        provider: "user-service-provider",
         logLevel: "INFO",
         providerBaseUrl: `http://localhost:${port}`,
         pactBrokerUrl: process.env.PACT_BROKER_BASE_URL,
@@ -27,7 +27,7 @@ describe("Clients Service Pact verification", () => {
         providerVersion: "1.0.0"
     }
 
-    it("validates the expectations of the clients service", () => {
+    it("validates the expectations of the users service", () => {
 
         return new Verifier(opts).verifyProvider().then(output => {
             console.log("Pact Verification Complete!")

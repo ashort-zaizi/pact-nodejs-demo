@@ -1,17 +1,17 @@
 {
   "consumer": {
-    "name": "client-service-consumer"
+    "name": "user-service-consumer"
   },
   "provider": {
-    "name": "client-service-provider"
+    "name": "user-service-provider"
   },
   "interactions": [
     {
-      "description": "a request for all clients",
-      "providerState": "i have a list of clients",
+      "description": "a request for all users",
+      "providerState": "i have a list of users",
       "request": {
         "method": "GET",
-        "path": "/clients",
+        "path": "/users",
         "headers": {
           "Accept": "application/json, text/plain, */*"
         }
@@ -23,15 +23,15 @@
         },
         "body": [
           {
-            "firstName": "Lisa",
-            "lastName": "Simpson",
-            "age": 8,
+            "firstName": "Andy",
+            "lastName": "Short",
+            "age": 45,
             "id": 1
           },
           {
-            "firstName": "Lisa",
-            "lastName": "Simpson",
-            "age": 8,
+            "firstName": "Andy",
+            "lastName": "Short",
+            "age": 45,
             "id": 1
           }
         ],
@@ -58,11 +58,11 @@
       }
     },
     {
-      "description": "a request to get a single client",
-      "providerState": "a client with ID equal to 1 exists",
+      "description": "a request to get a single user",
+      "providerState": "a user with ID equal to 1 exists",
       "request": {
         "method": "GET",
-        "path": "/clients/1",
+        "path": "/users/1",
         "headers": {
           "Accept": "application/json, text/plain, */*"
         }
@@ -73,8 +73,8 @@
           "Content-Type": "application/json; charset=utf-8"
         },
         "body": {
-          "firstName": "Lisa",
-          "lastName": "Simpson",
+          "firstName": "Andy",
+          "lastName": "Short",
           "age": 8,
           "id": 1
         },
@@ -92,11 +92,11 @@
       }
     },
     {
-      "description": "a request to create a new client with firstname, lastname and age",
-      "providerState": "client server is available",
+      "description": "a request to create a new user with firstname, lastname and age",
+      "providerState": "user server is available",
       "request": {
         "method": "POST",
-        "path": "/clients",
+        "path": "/users",
         "headers": {
           "Content-Type": "application/json;charset=utf-8"
         },
