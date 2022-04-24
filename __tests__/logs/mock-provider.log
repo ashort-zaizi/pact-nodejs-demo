@@ -1,16 +1,16 @@
-I, [2022-04-24T20:22:14.901429 #7882]  INFO -- : Registered expected interaction GET /users
-I, [2022-04-24T20:22:14.907721 #7882]  INFO -- : Received request GET /users
-I, [2022-04-24T20:22:14.908417 #7882]  INFO -- : Found matching response for GET /users
-I, [2022-04-24T20:22:14.913204 #7882]  INFO -- : Verifying - interactions matched
-I, [2022-04-24T20:22:14.915689 #7882]  INFO -- : Cleared interactions
-I, [2022-04-24T20:22:14.918957 #7882]  INFO -- : Registered expected interaction GET /users/1
-I, [2022-04-24T20:22:14.922470 #7882]  INFO -- : Received request GET /users/1
-I, [2022-04-24T20:22:14.922604 #7882]  INFO -- : Found matching response for GET /users/1
-I, [2022-04-24T20:22:14.925865 #7882]  INFO -- : Verifying - interactions matched
-I, [2022-04-24T20:22:14.928243 #7882]  INFO -- : Cleared interactions
-I, [2022-04-24T20:22:14.930773 #7882]  INFO -- : Registered expected interaction POST /users
-I, [2022-04-24T20:22:14.933479 #7882]  INFO -- : Received request POST /users
-I, [2022-04-24T20:22:14.933664 #7882]  INFO -- : Found matching response for POST /users
-I, [2022-04-24T20:22:14.936211 #7882]  INFO -- : Verifying - interactions matched
-I, [2022-04-24T20:22:14.938214 #7882]  INFO -- : Cleared interactions
-I, [2022-04-24T20:22:14.940464 #7882]  INFO -- : Writing pact for user-service-provider to /Users/andyshortzaizi.com/Documents/pact-js/__tests__/pacts/user-service-consumer-user-service-provider.json
+I, [2022-04-24T20:55:15.945606 #17223]  INFO -- : Registered expected interaction GET /users
+I, [2022-04-24T20:55:15.951908 #17223]  INFO -- : Received request GET /users
+I, [2022-04-24T20:55:15.952773 #17223]  INFO -- : Found matching response for GET /users
+I, [2022-04-24T20:55:15.957956 #17223]  INFO -- : Verifying - interactions matched
+I, [2022-04-24T20:55:15.961019 #17223]  INFO -- : Cleared interactions
+I, [2022-04-24T20:55:15.965413 #17223]  INFO -- : Registered expected interaction GET /users/1
+I, [2022-04-24T20:55:15.969517 #17223]  INFO -- : Received request GET /users/1
+I, [2022-04-24T20:55:15.969716 #17223]  INFO -- : Found matching response for GET /users/1
+I, [2022-04-24T20:55:15.973342 #17223]  INFO -- : Verifying - interactions matched
+I, [2022-04-24T20:55:15.976410 #17223]  INFO -- : Cleared interactions
+I, [2022-04-24T20:55:15.980031 #17223]  INFO -- : Registered expected interaction POST /users
+I, [2022-04-24T20:55:15.983857 #17223]  INFO -- : Received request POST /users
+I, [2022-04-24T20:55:15.984103 #17223]  INFO -- : Found matching response for POST /users
+I, [2022-04-24T20:55:15.987742 #17223]  INFO -- : Verifying - interactions matched
+I, [2022-04-24T20:55:15.990765 #17223]  INFO -- : Cleared interactions
+I, [2022-04-24T20:55:15.993536 #17223]  INFO -- : Writing pact for user-service-provider to /Users/andyshortzaizi.com/Documents/pact-js/__tests__/pacts/user-service-consumer-user-service-provider.json
