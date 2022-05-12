@@ -29,15 +29,17 @@ describe("Pact for Users Service API", () => {
             // GET_USERS_EXPECTED_BODY = [
             //     { "firstName": "Andy", "lastName": "Short", "age": 45, "id": 1 }, 
             //     { "firstName": "Johnny", "lastName": "Depp", "age": 58, "id": 2 },
-            // { "firstName": "Amber", "lastName": "Heard", "age": 36, "id": 3 }]
+            //     { "firstName": "Amber", "lastName": "Heard", "age": 36, "id": 3 }]
+
 
             GET_USERS_EXPECTED_BODY = { 
-                "firstName": Matchers.like("Andy"), 
+                "firstName": Matchers.like(20), 
                 "lastName": Matchers.like("Short"), 
                 "age": Matchers.like(45), 
                 "id": Matchers.like(1) 
             }
 
+            
             // Setup interactions
             beforeEach(() => {
                 const interaction = {
@@ -55,9 +57,9 @@ describe("Pact for Users Service API", () => {
                       headers: {
                         "Content-Type": "application/json; charset=utf-8",
                       },
-                    //   body: GET_USERS_EXPECTED_BODY,
-                    body: Matchers.eachLike(GET_USERS_EXPECTED_BODY, { min: 2 }),
-                  },
+                      // body: GET_USERS_EXPECTED_BODY,
+                      body: Matchers.eachLike(GET_USERS_EXPECTED_BODY, { min: 2 }),
+                    },
                 }
                 return mockProvider.addInteraction(interaction)  
             })
