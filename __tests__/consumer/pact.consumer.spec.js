@@ -10,7 +10,7 @@ const mockProvider = new Pact({
     dir: path.resolve(process.cwd(), "__tests__/pacts"), // location where pact contract will be saved
     spec: 2,  // Pact specification version
     logLevel: 'INFO',   // sets the log level to 'INFO' 
-    pactfileWriteMode: "overwrite",  // property used to overwrite an existing pact file in the specified folder with the same filename
+    pactfileWriteMode: "overwrite",  // property used to overwrite an existing pact contract file in the specified folder with the same filename
     consumer: "user-service-consumer",  // name given to the consumer 
     provider: "user-service-provider",  // name given to the provider
     consumerVersion: "1.0.0",   // consumer version number
@@ -20,7 +20,7 @@ const mockProvider = new Pact({
 describe("Pact for Users Service API", () => {
     beforeAll(() => mockProvider.setup());  // Start the Mock Server and wait for it to be available
     afterEach(() => mockProvider.verify()); // Verifies that all interactions specified
-    afterAll(() => mockProvider.finalize()); // Records the interactions between the Mock Server into the pact file and shuts it down
+    afterAll(() => mockProvider.finalize()); // Records the interactions between the Mock Server into the pact contract file and shuts the mock provider down
 
     describe('given there are users', () => {
         describe('when a request is made to GET all users', () => {
@@ -33,7 +33,7 @@ describe("Pact for Users Service API", () => {
 
 
             GET_USERS_EXPECTED_BODY = { 
-                "firstName": Matchers.like(20), 
+                "firstName": Matchers.like("Andy"), 
                 "lastName": Matchers.like("Short"), 
                 "age": Matchers.like(45), 
                 "id": Matchers.like(1) 
