@@ -33,7 +33,7 @@ server.get("/users", (req, res) => {
   res.json(userRepository.fetchAll())
 })
 
-// Find user by ID
+// Get a single user by ID
 server.get("/users/:id", (req, res) => {
   const response = userRepository.getById(req.params.id)
   if (response) {

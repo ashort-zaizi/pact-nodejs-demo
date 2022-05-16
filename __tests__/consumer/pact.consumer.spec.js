@@ -14,10 +14,10 @@ const mockProvider = new Pact({
     consumer: "user-service-consumer",  // name given to the consumer 
     provider: "user-service-provider",  // name given to the provider
     consumerVersion: "1.0.0",   // consumer version number
-    providerVersion: "1.0.0"    // provider version number
+    providerVersion: "1.0.0"    // provider version numbe›r
  })
 
-describe("Pact for Users Service API", () => {
+describe("Pact tests for Users Service API", () => {
     beforeAll(() => mockProvider.setup());  // Start the Mock Server and wait for it to be available
     afterEach(() => mockProvider.verify()); // Verifies that all interactions specified
     afterAll(() => mockProvider.finalize()); // Records the interactions between the Mock Server into the pact contract file and shuts the mock provider down
@@ -26,12 +26,6 @@ describe("Pact for Users Service API", () => {
         describe('when a request is made to GET all users', () => {
 
             // Array of expected users
-            // GET_USERS_EXPECTED_BODY = [
-            //     { "firstName": "Andy", "lastName": "Short", "age": 45, "id": 1 }, 
-            //     { "firstName": "Johnny", "lastName": "Depp", "age": 58, "id": 2 },
-            //     { "firstName": "Amber", "lastName": "Heard", "age": 36, "id": 3 }]
-
-
             GET_USERS_EXPECTED_BODY = { 
                 "firstName": Matchers.like("Andy"), 
                 "lastName": Matchers.like("Short"), 
@@ -39,7 +33,6 @@ describe("Pact for Users Service API", () => {
                 "id": Matchers.like(1) 
             }
 
-            
             // Setup interactions
             beforeEach(() => {
                 const interaction = {

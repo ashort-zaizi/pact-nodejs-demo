@@ -1,0 +1,16 @@
+I, [2022-05-16T13:18:30.513592 #90315]  INFO -- : Registered expected interaction GET /users
+I, [2022-05-16T13:18:30.520244 #90315]  INFO -- : Received request GET /users
+I, [2022-05-16T13:18:30.520882 #90315]  INFO -- : Found matching response for GET /users
+I, [2022-05-16T13:18:30.526240 #90315]  INFO -- : Verifying - interactions matched
+I, [2022-05-16T13:18:30.529061 #90315]  INFO -- : Cleared interactions
+I, [2022-05-16T13:18:30.533025 #90315]  INFO -- : Registered expected interaction GET /users/1
+I, [2022-05-16T13:18:30.536263 #90315]  INFO -- : Received request GET /users/1
+I, [2022-05-16T13:18:30.536445 #90315]  INFO -- : Found matching response for GET /users/1
+I, [2022-05-16T13:18:30.540197 #90315]  INFO -- : Verifying - interactions matched
+I, [2022-05-16T13:18:30.543361 #90315]  INFO -- : Cleared interactions
+I, [2022-05-16T13:18:30.547033 #90315]  INFO -- : Registered expected interaction POST /users
+I, [2022-05-16T13:18:30.550364 #90315]  INFO -- : Received request POST /users
+I, [2022-05-16T13:18:30.550586 #90315]  INFO -- : Found matching response for POST /users
+I, [2022-05-16T13:18:30.553705 #90315]  INFO -- : Verifying - interactions matched
+I, [2022-05-16T13:18:30.556246 #90315]  INFO -- : Cleared interactions
+I, [2022-05-16T13:18:30.559272 #90315]  INFO -- : Writing pact for user-service-provider to /Users/andyshortzaizi.com/Documents/pact-js/__tests__/pacts/user-service-consumer-user-service-provider.json
